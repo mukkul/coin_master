@@ -1,7 +1,15 @@
-import 'package:coin_master/views/login_view.dart';
+import 'package:coin_master/constants/key_constants.dart';
+import 'package:coin_master/constants/url_constants.dart';
+import 'package:coin_master/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: UrlConstants.supabaseUrl,
+    anonKey: KeyConstants.supabaseKey,
+  );
   runApp(const MyApp());
 }
 
@@ -16,8 +24,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginView(),
+      initialRoute: '/',
+      routes: AppRoutes.appRoutes,
     );
   }
 }
-
