@@ -16,7 +16,6 @@ dependencies:
   firebase_analytics: ^10.3.0
   firebase_crashlytics: ^3.2.0
   firebase_core: ^2.11.0
-  webengage_flutter: ^1.2.4
   easy_localization_loader: ^1.0.1+1
   internet_connection_checker: ^1.0.0+1
   shared_preferences: ^2.1.1
@@ -29,4 +28,6 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+  assets:
+    - assets/string_translations/
 

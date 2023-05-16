@@ -1,4 +1,5 @@
 {
     "offlineSnackBarText": "You're offline! Please check your connection!",
-    "enterMobileNumber": "Enter Your Mobile Number"
+    "enterMobileNumber": "Enter Your Mobile Number",
+    "getOTP":"Get OTP"
 }

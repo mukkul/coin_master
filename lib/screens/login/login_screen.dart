@@ -40,14 +40,24 @@ class _LoginWidgetState extends State<LoginWidget> {
       body: BlocConsumer<LoginBloc, LoginState>(
         listener: (BuildContext context, LoginState state) {},
         builder: (BuildContext context, LoginState state) {
-          return Column(
-            children: [
-              LabelText(label: LocalizationUtil.getTranslatedString('enterMobileNumber'),),
-              InputField.digitOnly(
-                textEditingController: LoginController.phoneController,
-              ),
-              const Button.primary(onPressed: null),
-            ],
+          return SafeArea(
+            child: Column(
+              children: [
+                LabelText(
+                  label:
+                      LocalizationUtil.getTranslatedString('enterMobileNumber'),
+                ),
+                InputField.digitOnly(
+                  textEditingController: LoginController.phoneController,
+                ),
+                Button.primary(
+                  onPressed: null,
+                  child: LabelText(
+                    label: LocalizationUtil.getTranslatedString('Get-OTP'),
+                  ),
+                ),
+              ],
+            ),
           );
         },
       ),

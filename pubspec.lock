@@ -594,14 +594,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-  webengage_flutter:
-    dependency: "direct main"
-    description:
-      name: webengage_flutter
-      sha256: "3162fe7dc4878fd23ee0ad8170c40efc8364aab0ffe03c9ddc47da2238f07e68"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.4"
   win32:
     dependency: transitive
     description:

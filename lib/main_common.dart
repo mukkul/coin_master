@@ -15,7 +15,7 @@ Future<void> mainCommon(FlavorConfig config) async {
   flavorConfig = config;
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await initializeFlutterFire();
+  // await initializeFlutterFire();
   NetworkManager.initNetworkMonitor();
   await SharedPreferenceManager.initSharedPreferences();
   runApp(
