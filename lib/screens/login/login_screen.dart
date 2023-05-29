@@ -2,7 +2,6 @@ import 'package:coin_master/bloc/login_barrel.dart';
 import 'package:coin_master/controllers/login_controllers/login_controller.dart';
 import 'package:coin_master/utils/localization/localization_util.dart';
 import 'package:coin_master/widgets/button.dart';
-import 'package:coin_master/widgets/input_field.dart';
 import 'package:coin_master/widgets/label_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,8 +28,6 @@ class LoginWidget extends StatefulWidget {
 class _LoginWidgetState extends State<LoginWidget> {
   @override
   void initState() {
-    LoginController.phoneController = TextEditingController();
-    LoginController.addListenerPhoneInput();
     super.initState();
   }
 
@@ -42,18 +39,18 @@ class _LoginWidgetState extends State<LoginWidget> {
         builder: (BuildContext context, LoginState state) {
           return SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                LabelText(
-                  label:
-                      LocalizationUtil.getTranslatedString('enterMobileNumber'),
-                ),
-                InputField.digitOnly(
-                  textEditingController: LoginController.phoneController,
-                ),
-                Button.primary(
-                  onPressed: null,
-                  child: LabelText(
-                    label: LocalizationUtil.getTranslatedString('Get-OTP'),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                  child: Button.primary(
+                    onPressed: () async =>
+                        await LoginController.signInWithGoogle(context: context),
+                    child: LabelText(
+                      label: LocalizationUtil.getTranslatedString(
+                          'loginWithGoogle'),
+                    ),
                   ),
                 ),
               ],
@@ -66,7 +63,6 @@ class _LoginWidgetState extends State<LoginWidget> {
 
   @override
   void dispose() {
-    LoginController.phoneController.dispose();
     super.dispose();
   }
 }

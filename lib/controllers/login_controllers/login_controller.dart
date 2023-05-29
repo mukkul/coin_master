@@ -1,25 +1,50 @@
+import 'package:coin_master/utils/ui/common_ui_elements.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginController {
-  static final List<String> validInitialDigitsForPhone = ['6', '7', '8', '9'];
+  LoginController._();
+  static Future<User?> signInWithGoogle({required BuildContext context}) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
 
-  static bool isValidPhoneNumber = false;
+    final GoogleSignIn googleSignIn = GoogleSignIn();
 
-  static late final TextEditingController phoneController;
+    final GoogleSignInAccount? googleSignInAccount =
+        await googleSignIn.signIn();
 
-  static void addListenerPhoneInput() {
-    phoneController.addListener(() {
-      isValidPhoneNumber =
-          validatePhoneNumber(phoneNumber: phoneController.text.trim());
-    });
-  }
+    if (googleSignInAccount != null) {
+      final GoogleSignInAuthentication googleSignInAuthentication =
+          await googleSignInAccount.authentication;
 
-  static bool validatePhoneNumber({required String phoneNumber}) {
-    if (phoneNumber.length == 10 &&
-        validInitialDigitsForPhone.contains(phoneNumber.characters.first)) {
-      return true;
-    } else {
-      return false;
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleSignInAuthentication.accessToken,
+        idToken: googleSignInAuthentication.idToken,
+      );
+
+      try {
+        final UserCredential userCredential =
+            await auth.signInWithCredential(credential);
+
+        user = userCredential.user;
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'account-exists-with-different-credential') {
+          CommonUIElements.showErrorSnackbar(
+            error: 'The account already exists with a different credential',
+          );
+        } else if (e.code == 'invalid-credential') {
+          CommonUIElements.showErrorSnackbar(
+            error: 'Error occurred while accessing credentials. Try again.',
+          );
+        }
+      } catch (e) {
+        CommonUIElements.showErrorSnackbar(
+          error: 'Error occurred using Google Sign In. Try again.',
+        );
+      }
     }
+
+    return user;
   }
 }

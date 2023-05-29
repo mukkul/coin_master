@@ -15,7 +15,9 @@ dependencies:
   easy_localization: ^3.0.1
   firebase_analytics: ^10.3.0
   firebase_crashlytics: ^3.2.0
-  firebase_core: ^2.11.0
+  firebase_core: ^2.13.0
+  firebase_auth: ^4.6.1
+  google_sign_in: ^6.1.2
   easy_localization_loader: ^1.0.1+1
   internet_connection_checker: ^1.0.0+1
   shared_preferences: ^2.1.1
@@ -30,4 +32,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/string_translations/
+    - assets/images/
 

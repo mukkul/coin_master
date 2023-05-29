@@ -9,7 +9,19 @@ class CommonUIElements {
     ),
   );
 
+
   static void showNetworkSnackbar() {
     AppGlobalKeys.scaffoldKey.currentState?.showSnackBar(_networkSnackBar);
+  }
+  static showErrorSnackbar({required String error}) {
+   AppGlobalKeys.scaffoldKey.currentState?.showSnackBar(SnackBar(
+    content: Text(
+      error,
+      style: const TextStyle(
+        color: Colors.white,
+      ),
+    ),
+    backgroundColor: Colors.red,
+    ));
   }
 }
