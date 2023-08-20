@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "818648632114",
+    "project_id": "coin-master-2f2e8",
+    "storage_bucket": "coin-master-2f2e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818648632114:android:aa4ee7525a533a8d34652b",
+        "android_client_info": {
+          "package_name": "com.techforst.coin_master"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818648632114-0166em8slh2720cih01lcbj6neog6036.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techforst.coin_master",
+            "certificate_hash": "839e463ade2a6220f9c4e15fede8eb735e8c9548"
+          }
+        },
+        {
+          "client_id": "818648632114-6581b03s568hm21k7rae1290me34c210.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-N3Magt5MCIVNpfv3obA6cDZikIOpKc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818648632114-6581b03s568hm21k7rae1290me34c210.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "818648632114-u4am30tobandh2jddaretuamnr8bs0og.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.coinMaster"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

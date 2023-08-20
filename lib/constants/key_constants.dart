@@ -1,3 +1,0 @@
-class KeyConstants {
-  static String supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZsbHlneG53cW5rY3Rvd3pteGhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk4MDMyMzksImV4cCI6MTk5NTM3OTIzOX0.h8HMQR_lT03uJGW60aiwgDd4D6zxTUhtdWeRU9EbYFg';
-}
