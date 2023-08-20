@@ -1,0 +1,16 @@
+{
+    "offlineSnackBarText": "You're offline! Please check your connection!",
+    "enterMobileNumber": "Enter Your Mobile Number",
+    "getOTP":"Get OTP",
+    "enter":"Enter OTP",
+    "verifyOTP":"Verify OTP",
+    "transactionAmount":"Transaction Amount",
+    "transactionDate":"Transaction Date",
+    "transactionCategory":"Transaction Category",
+    "transactionDescription":"Transaction Description",
+    "loginWithGoogle": "Sign in using google",
+    "addTransaction":"Add Transaction",
+    "addMoreCategory":"Add More Category",
+    "addCategory": "Add Category",
+    "categoryName": "categoryName"
+}
