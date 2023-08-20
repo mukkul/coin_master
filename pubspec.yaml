@@ -6,11 +6,9 @@ version: 1.0.0+1
 
 environment:
   sdk: '>=2.19.4 <3.0.0'
-
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.2
   easy_localization: ^3.0.1
   firebase_analytics: ^10.3.0
