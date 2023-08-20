@@ -6,10 +6,7 @@ import 'package:coin_master/utils/firebase/firebase_config.dart';
 import 'package:coin_master/utils/network/network_manager.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:easy_localization_loader/easy_localization_loader.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
-import 'firebase_options.dart';
 
 late FlavorConfig flavorConfig;
 

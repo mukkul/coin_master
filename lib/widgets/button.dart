@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 
-class Button extends StatelessWidget {
-  const Button(
-      {super.key, this.child, required this.onPressed, this.buttonColor, this.elevation});
+class Buttons extends StatelessWidget {
+  const Buttons({
+    super.key,
+    this.child,
+    required this.onPressed,
+    this.buttonColor,
+    this.elevation,
+  });
 
-  const Button.primary(
-      {super.key, this.child, required this.onPressed, this.buttonColor, this.elevation});
+  const Buttons.primary({
+    super.key,
+    this.child,
+    required this.onPressed,
+    this.buttonColor,
+    this.elevation,
+  });
 
-  const Button.secondary({
+  const Buttons.secondary({
     super.key,
     this.child,
     required this.onPressed,
@@ -25,7 +35,7 @@ class Button extends StatelessWidget {
     return MaterialButton(
       color: Colors.yellow.shade600,
       onPressed: onPressed,
-      elevation: 4,
+      elevation: elevation,
       child: child,
     );
   }

@@ -1,5 +1,4 @@
 import 'package:coin_master/utils/keys/app_global_keys.dart';
-import 'package:coin_master/utils/network/network_manager.dart';
 import 'package:coin_master/utils/ui/screen_navigation.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
