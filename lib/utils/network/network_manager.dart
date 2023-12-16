@@ -8,7 +8,7 @@ class NetworkManager {
         case InternetConnectionStatus.connected:
           break;
         case InternetConnectionStatus.disconnected:
-          CommonUIElements.showNetworkSnackbar();
+          CommonUIElements.showNetworkSnackBar();
           break;
       }
     });
