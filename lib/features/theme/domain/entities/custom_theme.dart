@@ -1,0 +1,4 @@
+enum CustomTheme{
+  light,
+  dark
+}
