@@ -1,5 +1,5 @@
 
-import 'package:coin_master/features/domain/transaction/entities/transaction.dart';
+import 'package:coin_master/features/transaction/domain/entities/transaction.dart';
 
 abstract interface class TransactionRepository {
   Future<void> addTransaction({

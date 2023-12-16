@@ -1,4 +1,4 @@
-import 'package:coin_master/features/domain/transaction/entities/transaction.dart';
+import 'package:coin_master/features/transaction/domain/entities/transaction.dart';
 import 'package:coin_master/features/domain/transaction/repositories/transaction_repository.dart';
 import 'package:coin_master/shared/domain/usecases/base_usecases.dart';
 
