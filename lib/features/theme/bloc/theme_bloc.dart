@@ -11,6 +11,7 @@ part 'theme_event.dart';
 
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   final StreamThemeUseCase _streamThemeUseCase;
+  late StreamSubscription<CustomTheme> _themeSubscription;
 
   ThemeBloc({
     required StreamThemeUseCase streamThemeUseCase,
