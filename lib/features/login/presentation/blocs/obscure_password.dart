@@ -1,0 +1,1 @@
+enum ObscurePassword{yes, no}

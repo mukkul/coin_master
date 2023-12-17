@@ -30,16 +30,16 @@ class LoginController {
         user = userCredential.user;
       } on FirebaseAuthException catch (e) {
         if (e.code == 'account-exists-with-different-credential') {
-          CommonUIElements.showErrorSnackbar(
+          CommonUIElements.showErrorSnackBar(
             error: 'The account already exists with a different credential',
           );
         } else if (e.code == 'invalid-credential') {
-          CommonUIElements.showErrorSnackbar(
+          CommonUIElements.showErrorSnackBar(
             error: 'Error occurred while accessing credentials. Try again.',
           );
         }
       } catch (e) {
-        CommonUIElements.showErrorSnackbar(
+        CommonUIElements.showErrorSnackBar(
           error: 'Error occurred using Google Sign In. Try again.',
         );
       }

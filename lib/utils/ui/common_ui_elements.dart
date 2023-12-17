@@ -10,10 +10,10 @@ class CommonUIElements {
   );
 
 
-  static void showNetworkSnackbar() {
+  static void showNetworkSnackBar() {
     AppGlobalKeys.scaffoldKey.currentState?.showSnackBar(_networkSnackBar);
   }
-  static showErrorSnackbar({required String error}) {
+  static showErrorSnackBar({required String error}) {
    AppGlobalKeys.scaffoldKey.currentState?.showSnackBar(SnackBar(
     content: Text(
       error,
