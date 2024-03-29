@@ -127,6 +127,7 @@ class _LoginViewState extends State<LoginView> {
                       context.read<SignInCubit>().passwordChanged(value);
                     },
                   ),
+                  const SizedBox(height:20,),
                   ElevatedButton(
                     key: const Key('signIn_continue_elevatedButton'),
                     onPressed:

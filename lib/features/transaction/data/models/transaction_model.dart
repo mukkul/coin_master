@@ -39,15 +39,15 @@ class TransactionModel extends Equatable {
   //     transactionType: transactionType,
   //     category: category,
   //   );
-  // } 
+  // }
 
   @override
   List<Object?> get props => [
-        transactionId,
-        transactionAmount,
-        category,
-        icon,
-        created,
-        updated,
-      ];
+    transactionId,
+    transactionAmount,
+    category,
+    icon,
+    created,
+    updated,
+  ];
 }

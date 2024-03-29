@@ -1,16 +1,16 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:coin_master/features/transaction/domain/entities/transaction_type.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 
-class Transaction extends Equatable {
-  final int? transactionId;
-  final num amount;
-  final DateTime transactionDateTime;
+class TransactionEntity extends Equatable {
+  final String? transactionId;
+  final double amount;
+  final Timestamp transactionDateTime;
   final TransactionType transactionType;
-  final Category category;
+  final String? category;
   final String? description;
 
-  const Transaction({
+  const TransactionEntity({
     required this.amount,
     required this.transactionDateTime,
     required this.transactionType,
@@ -21,5 +21,5 @@ class Transaction extends Equatable {
 
   @override
   List<Object?> get props =>
-      [amount, transactionDateTime, transactionType, category, transactionId, description];
+      [transactionId, amount, transactionDateTime, transactionType, category, description];
 }

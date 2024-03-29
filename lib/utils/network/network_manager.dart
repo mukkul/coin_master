@@ -1,13 +1,13 @@
 import 'package:coin_master/utils/ui/common_ui_elements.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 
 class NetworkManager {
   static void initNetworkMonitor() {
-    InternetConnectionChecker().onStatusChange.listen((event) {
+    InternetConnection().onStatusChange.listen((event) {
       switch (event) {
-        case InternetConnectionStatus.connected:
+        case InternetStatus.connected:
           break;
-        case InternetConnectionStatus.disconnected:
+        case InternetStatus.disconnected:
           CommonUIElements.showNetworkSnackBar();
           break;
       }
