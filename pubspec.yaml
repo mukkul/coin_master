@@ -9,8 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  easy_localization: ^3.0.1
-
   #Firebase
   firebase_analytics: ^10.3.0
   firebase_core: ^2.13.0
