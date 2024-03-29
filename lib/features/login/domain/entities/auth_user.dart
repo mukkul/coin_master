@@ -8,8 +8,8 @@ class AuthUser extends Equatable {
   const AuthUser({
     required this.id,
     required this.email,
-    required this.name,
-    required this.photoUrl,
+    this.name,
+    this.photoUrl,
   });
 
   static const AuthUser empty =

@@ -8,38 +8,35 @@ import 'package:coin_master/features/theme/bloc/theme_bloc.dart';
 import 'package:coin_master/features/theme/data/repositories/theme_repository_impl.dart';
 import 'package:coin_master/features/theme/domain/entities/custom_theme.dart';
 import 'package:coin_master/features/theme/domain/usecases/stream_theme_usecase.dart';
-import 'package:coin_master/flavor_config.dart';
+import 'package:coin_master/firebase_options.dart';
 import 'package:coin_master/utils/constants.dart';
-import 'package:coin_master/utils/firebase/firebase_config.dart';
 import 'package:coin_master/utils/network/network_manager.dart';
 import 'package:coin_master/utils/service_locator.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:easy_localization_loader/easy_localization_loader.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:coin_master/utils/service_locator.dart' as service;
 
-late FlavorConfig flavorConfig;
-
-Future<void> mainCommon(FlavorConfig config) async {
-  flavorConfig = config;
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await FirebaseConfig.initializeFlutterFire();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   NetworkManager.initNetworkMonitor();
   await SharedPreferenceManager.initSharedPreferences();
   await service.init();
   final user = await serviceLocator<AuthRepository>().authUserStream.first;
   final initialTheme =
       await ThemeRepositoryImpl(localDataSource: serviceLocator())
-          .getTheme()
-          .first;
+      .getTheme()
+      .first;
   runApp(
     EasyLocalization(
       supportedLocales: Constants.supportedLocale,
       path: Constants.stringTranslationsPath,
       fallbackLocale: Constants.localEnglish,
-      assetLoader: JsonAssetLoader(),
       useOnlyLangCode: true,
       child: MultiBlocProvider(
         providers: [

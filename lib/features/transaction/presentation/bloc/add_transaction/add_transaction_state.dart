@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'add_transaction_cubit.dart';
 
 class AddTransactionState extends Equatable {
   @override

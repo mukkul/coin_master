@@ -1,1 +1,1 @@
-enum TransactionType{creadit, debit}
+enum TransactionType{credit, debit}

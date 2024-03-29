@@ -1,5 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:coin_master/features/transaction/domain/entities/transaction_entity.dart';
+import 'package:coin_master/features/transaction/domain/entities/transaction_type.dart';
 import 'package:coin_master/utils/ui/custom_text_fields.dart';
 import 'package:coin_master/widgets/buttons.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class AddTransactionScreen extends StatefulWidget {
@@ -70,7 +74,15 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
             ),
           ),
           Buttons.primary(
-            onPressed: (){},
+            onPressed: (){
+              TransactionEntity transaction = TransactionEntity(
+                amount: double.parse(amountController.text.trim()),
+                description: descriptionController.text.trim(),
+                category: categoryController.text.trim(),
+                transactionDateTime: Timestamp.fromMicrosecondsSinceEpoch(DateTime.parse(dateTimeController.text.trim()).microsecondsSinceEpoch),
+                transactionType: TransactionType.debit,
+              );
+            },
             child: const Text('Add Transaction'),
           ),
         ],

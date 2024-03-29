@@ -1,5 +1,5 @@
 import 'package:coin_master/features/login/bloc/auth_bloc.dart';
-import 'package:coin_master/features/presentation/screens/transaction/add_transaction_screen.dart';
+import 'package:coin_master/features/transaction/presentation/screens/add_transaction_screen.dart';
 import 'package:coin_master/widgets/cards/card_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

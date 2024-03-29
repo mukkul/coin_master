@@ -14,15 +14,15 @@ class Buttons extends StatelessWidget {
     this.child,
     required this.onPressed,
     this.buttonColor,
-    this.elevation,
+    this.elevation = 4,
   });
 
   const Buttons.secondary({
     super.key,
     this.child,
     required this.onPressed,
-    this.buttonColor,
-    this.elevation,
+    this.buttonColor = Colors.grey,
+    this.elevation = 0,
   });
 
   final Widget? child;
@@ -33,7 +33,7 @@ class Buttons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      color: Colors.yellow.shade600,
+      color: buttonColor,
       onPressed: onPressed,
       elevation: elevation,
       child: child,
