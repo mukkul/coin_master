@@ -7,16 +7,16 @@ class EditTransactionUseCase extends UseCase<TransactionEntity, TransactionParam
 
   EditTransactionUseCase({required this.transactionRepository});
   @override
-  Future<TransactionEntity> call(TransactionParam params) async {
-    try {
-      return await transactionRepository.editTransaction(
-        transaction: params.transaction,
-      );
-    } on ArgumentError catch (error) {
-      throw Exception(error);
-    } catch (error) {
-      throw Exception(error);
-    }
+  Future<Transaction    try {
+  return await transactionRepository.editTransaction(
+  transaction: params.transaction,
+  );
+  } on ArgumentError catch (error) {
+  throw Exception(error);
+  } catch (error) {
+  throw Exception(error);
+  }
+  Entity> call(TransactionParam params) async {
   }
 }
 
